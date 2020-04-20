@@ -1,7 +1,7 @@
 const express = require('express');
-const routeStatus = require('./routes/status/get');
-const routeGetAll = require('./routes/messages/get');
-const routeCreateMessage = require("./routes/messages/post");
+const routeStatus = require('./src/routes/status/get');
+const routeGetAll = require('./src/routes/messages/get');
+const routeCreateMessage = require("./src/routes/messages/post");
 
 const app = express();
 const port = process.env.PORT || 5000;
