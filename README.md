@@ -1,5 +1,6 @@
 # chat-api
-Chat api for a processing project I'm working on. 
+Chat api for a processing project I'm working on.
+Currently deployed at: https://processing-chat-api.herokuapp.com/
 
 
 To run the api
@@ -9,5 +10,8 @@ npm run dev to run locally with nodemon :5000
 
 
 Endpoints
-*/status (get)
-*/messages?name&message (post/get) to get / create message
+* /status (GET)
+* /messages (GET)
+* /messages(POST) 
+- name
+- message
