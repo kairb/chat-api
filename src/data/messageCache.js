@@ -1,4 +1,4 @@
-let messages = [{name: "kai", message: "Nailed i!t"}];
+let messages = [{name: "kai", message: "Nailed it!"}];
 
 function add(message){
   messages.push(message);
