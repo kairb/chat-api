@@ -1,4 +1,4 @@
-const messages = require('../../data/messageCache');
+const db = require('../../data/db')
 const date = require('../../utils/date');
 
 function createNewMessage(req, res){
@@ -6,11 +6,11 @@ function createNewMessage(req, res){
   var reqMessage = req.query.message;
   var time = date();
 
-  messages.add({
+  db.newMessage({
     name : reqName,
     message : reqMessage,
     time : time,
-  })
+  });
 
   res.sendStatus(201);
 }
