@@ -3,6 +3,8 @@ const routeStatus = require('./src/routes/status/get');
 const routeGetAll = require('./src/routes/messages/get');
 const routeCreateMessage = require("./src/routes/messages/post");
 
+require('dotenv').config()
+
 const app = express();
 const port = process.env.PORT || 5000;
 

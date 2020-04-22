@@ -1,6 +1,6 @@
 const {MongoClient} = require('mongodb');
-
-const uri = "mongodb+srv://kai:VLsIIwEvscJVlg8q@cluster0-2lmuy.mongodb.net/test?retryWrites=true&w=majority"
+require('dotenv').config()
+let uri = `mongodb+srv://${process.env.MONGOU}:${process.env.MONGOP}@cluster0-2lmuy.mongodb.net/test?retryWrites=true&w=majority`
 
 async function connect(){
   const client = MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true })
