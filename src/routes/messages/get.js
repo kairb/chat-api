@@ -1,7 +1,7 @@
-const messages = require('../../data/messageCache')
+const db = require('../../data/db')
 
-function getAllMessages(req, res){
-  return res.json(messages.getAll());
+async function getAllMessages(req, res){
+  return res.json(await db.getMessages());
 }
 
 module.exports = getAllMessages;
