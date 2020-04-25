@@ -43,10 +43,23 @@ async function getMessages(){
   }
 }
 
+async function deleteMessages(){
+  try{
+    const client = await connect();
+    const collection = await client.db('chat_api').collection('messages');
+    const messages = await collection.deleteMany({});
+    await disconnect(client)
+    return messages;
+  }catch(e){
+    console.error(e)
+  }
+}
+
 
 module.exports = {
   newMessage,
-  getMessages
+  getMessages,
+  deleteMessages
 };
 
 //https://flaviocopes.com/node-mongodb/
