@@ -11,7 +11,7 @@ jobs:
           steps:
             - run: npm install
       - run:
-        -steps:
+          steps:
             - run: npm start
 workflows:
     build-and-test:
