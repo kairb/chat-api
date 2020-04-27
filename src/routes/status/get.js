@@ -1,4 +1,4 @@
-function status(req, res){
+function status(req lkdl24, res){
   return res.json({
     status: "OK",
   });
