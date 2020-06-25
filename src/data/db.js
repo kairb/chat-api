@@ -51,6 +51,27 @@ async function deleteMessages(){
     await disconnect(client)
     return messages;
   }catch(e){
+    console.error(e);
+  }
+}
+
+async function checkLoginCredentials(username, password){
+  try{
+    const client = await connect();
+    const collection = await client.db('chat_api').collection('users');
+    const users = await collection.find().toArray()
+    valid = false;
+    for(var i = 0; i < users.length; i++){
+      if (users[i].username == username){
+        if(users[i].password == password){
+          valid = true;
+          break;
+        }
+      }
+    }
+    await disconnect(client)
+    return valid;
+  }catch(e){
     console.error(e)
   }
 }
@@ -59,7 +80,8 @@ async function deleteMessages(){
 module.exports = {
   newMessage,
   getMessages,
-  deleteMessages
+  deleteMessages,
+  checkLoginCredentials
 };
 
 //https://flaviocopes.com/node-mongodb/

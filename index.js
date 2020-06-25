@@ -3,6 +3,7 @@ const routeStatus = require('./src/routes/status/get');
 const routeGetAll = require('./src/routes/messages/get');
 const routeCreateMessage = require("./src/routes/messages/post");
 const routeReset = require("./src/routes/reset/post");
+const routeLogin = require("./src/routes/login/get")
 
 require('dotenv').config()
 
@@ -13,6 +14,7 @@ app.get("/status", routeStatus);
 app.get("/messages", routeGetAll);
 app.post("/messages", routeCreateMessage);
 app.post("/reset", routeReset);
+app.get("/login", routeLogin);
 
 app.get("*", function(req, res){
   res.status(404).send("Invalid route")
